@@ -20,7 +20,7 @@ public class VectorMethods {
 		double cosine; 
 		double ang;
 		cosine = dotProduct(a, b)/(magnitude(a)*magnitude(b));
-		ang = Math.acos(cosine);
+		ang = Math.toDegrees(Math.acos(cosine));
 		return ang;
 	};
 
@@ -35,7 +35,7 @@ public class VectorMethods {
 			System.out.println(mags);
 		
 			// Calling dotProduct method
-			double[] b = {0, 0, 0};
+			double[] b = {1, 5, 4};
 			double dots = vm.dotProduct(a, b);
 			System.out.println(dots);
 			
@@ -46,27 +46,7 @@ public class VectorMethods {
 			
 			
 			
-			System.out.println("When using vectors (4,3,2) and (1,5,4) the output of the angle method is 0.6862270476842258");
+			System.out.println("When using vectors (4,3,2) and (1,5,4) the output of the angle method is 39.31791362002883");
 			System.out.println("When using vectors (4,3,2) and (0,0,0) the output of the angle method is NaN as there can be no angle from (0,0,0)");
-		}
+		}}
 		
-		
-		
-		// Initialising dotProduct
-//		double[] a = {x, y, z};
-//		double[] b = {x, y, z};
-//		int n = a.length;
-//		
-//		int sum = 0;
-//		for (int i = 0; i < a.length; i++) {
-//			sum += a[n] * b[n];
-//		}
-		
-//		System.out.println(sum);
-		
-//		System.out.println(mag);
-		
-
-	}
-
-
