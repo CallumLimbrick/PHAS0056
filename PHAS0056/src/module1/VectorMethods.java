@@ -32,19 +32,19 @@ public class VectorMethods {
 			// Calling magnitude method
 			double[] a = {4, 3, 2};
 			double mags = vm.magnitude(a);
+			System.out.println("The magnitude of vector a is:");
 			System.out.println(mags);
 		
 			// Calling dotProduct method
 			double[] b = {1, 5, 4};
 			double dots = vm.dotProduct(a, b);
+			System.out.println("The dot product of vectors a and b is:");
 			System.out.println(dots);
 			
 			// Calling angle method
 			double angs = vm.angle(a, b);
+			System.out.println("The angle between vectors a and b in degrees is:");
 			System.out.println(angs);
-			
-			
-			
 			
 			System.out.println("When using vectors (4,3,2) and (1,5,4) the output of the angle method is 39.31791362002883");
 			System.out.println("When using vectors (4,3,2) and (0,0,0) the output of the angle method is NaN as there can be no angle from (0,0,0)");

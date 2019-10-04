@@ -34,18 +34,18 @@ public class DataTypes {
 		System.out.println(byteVar + floatVar);
 		System.out.println("byte type and float tpye added together returns a float type.");
 		
-		System.out.println("String" + floatVar + intVar);
-		System.out.println("When adding together a string and floats and ints then it concatenates the three");
+		System.out.println("String: " + floatVar + intVar);
+		System.out.println("When adding together a string and floats and ints then it concatenates the three and returns a string.");
 		
 		// Investigating what happens when using a non-initialised value
 		// int j=1;
 		// int i;
 		// j = i +1;
-		System.out.println("You cannot use a value that has not been initialised in functions");
+		System.out.println("You cannot use a value that has not been initialised in functions.");
 		
 		// Investigating a double to int cast
 		double test = 4.99;
-		System.out.println((int) test + " Is the double, 4.99, cast to an int. This converts the float to an integer, rounding down.");
+		System.out.println((int) test + " is the double, 4.99, cast to an int. This converts the float to an integer, rounding down.");
 
 	}
 
