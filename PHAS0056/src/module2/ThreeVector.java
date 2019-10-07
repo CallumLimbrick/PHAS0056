@@ -1,5 +1,7 @@
 package module2;
 
+import java.lang.Math;
+
 public class ThreeVector {
 	
 	private double x;
@@ -29,7 +31,7 @@ public class ThreeVector {
 		return Math.sqrt(x*x + y*y + z*z);
 	}
 	
-	// unitVector method for this ThreeVector, returns type ThreeVector
+	// unitVector method for "this" ThreeVector, returns type ThreeVector
 	public ThreeVector unitVector() {
 		double mag = magnitude();
 		double unitX = this.getX()/mag;
@@ -39,23 +41,61 @@ public class ThreeVector {
 		return unit;
 	}
 	
-	
+	// toString method for "this" ThreeVector, returns components in a string
 	public String toString() {
-		return "[+this.x+]";
+		return "x = "+x+", y = "+y+", z = "+z;
 	}
 	
+	// Static scalarProduct method for two ThreeVectors, returns type double
+	public static double scalarProduct(ThreeVector a, ThreeVector b) {
+		double prod = a.getX()*b.getX() + a.getY()*b.getY() + a.getZ()*b.getZ();
+		return prod;
+	}
 	
-
+	// Static vectorProduct method for two ThreeVectors, returns type ThreeVector
+	public static ThreeVector vectorProduct(ThreeVector a, ThreeVector b) {
+		double x = a.getY()*b.getZ() - a.getZ()*b.getY();
+		double y = a.getZ()*b.getX() - a.getX()*b.getZ();
+		double z = a.getX()*b.getY() - a.getY()*b.getX();
+		ThreeVector prod = new ThreeVector(x, y , z);
+		return prod;
+	}
+	
+	// Static add method for two ThreeVectors, returns type ThreeVector
+	public static ThreeVector add(ThreeVector a, ThreeVector b) {
+		ThreeVector added = new ThreeVector(a.getX() + b.getX(), a.getY() + b.getY(), a.getZ() + b.getZ());
+		return added;
+	}
+	
+	// Static angle method for two ThreeVectors, returns type double
+	public static double angle(ThreeVector a, ThreeVector b) {
+		double num = scalarProduct(a, b);
+		double den = a.magnitude()*b.magnitude();
+		double cosine = num/den;
+		double angle = Math.acos(cosine);
+		return angle;
+	}
+	
+	// scalarProduct method for a given and "this" ThreeVector, returns type double 
+	public double scalarProduct(ThreeVector a) {
+		return scalarProduct(this, a);
+	}
+	
+	// vectorProduct method for a given and "this" ThreeVector, returns type ThreeVector 
+	public ThreeVector vectorProduct(ThreeVector a) {
+		return vectorProduct(this, a);
+	}
+	
+	// add method for a given and "this" ThreeVector, returns type double 
+	public ThreeVector add(ThreeVector a) {
+		return add(this, a);
+	}
+	
+	// angle for a given and "this" ThreeVector, returns type double 
+	public double angle(ThreeVector a) {
+		return angle(this, a);
+	}
+	
 	public static void main(String[] args) {
-		
-		ThreeVector test = new ThreeVector(2.0, 2.0, 2.0);
-		
-		double mag;
-		mag = test.magnitude();
-		System.out.println(mag);
-		
-		ThreeVector unitVec = test.unitVector();
-		System.out.println(unitVec.getX());
 	}
-
 }
