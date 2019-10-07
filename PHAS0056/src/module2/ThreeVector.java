@@ -6,27 +6,30 @@ public class ThreeVector {
 	private double y;
 	private double z;
 	
+	// ThreeVector constructor with 3 double values
 	public ThreeVector(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 	
+	// Getting and Setting methods
 	double getX () {return x;}
 	double getY () {return y;}
 	double getZ () {return z;}
-	
 	void setX (double val) {x = val;}
 	void setY (double val) {y = val;}
 	void setz (double val) {z = val;}
-					
+	
+	// Magnitude method for "this" ThreeVector, returns type double
 	public double magnitude() {
 		x = this.getX();
 		y = this.getY();
 		z = this.getZ();
 		return Math.sqrt(x*x + y*y + z*z);
 	}
-
+	
+	// unitVector method for this ThreeVector, returns type ThreeVector
 	public ThreeVector unitVector() {
 		double mag = magnitude();
 		double unitX = this.getX()/mag;
@@ -34,6 +37,11 @@ public class ThreeVector {
 		double unitZ = this.getZ()/mag;
 		ThreeVector unit = new ThreeVector(unitX, unitY, unitZ);
 		return unit;
+	}
+	
+	
+	public String toString() {
+		return "[+this.x+]";
 	}
 	
 	
