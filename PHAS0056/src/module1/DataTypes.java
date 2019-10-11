@@ -8,7 +8,7 @@ public class DataTypes {
 		double doubVar = 5.0;
 		System.out.println("doubVar: " + doubVar);
 		
-		float floatVar = 5;
+		float floatVar = 5.3f;
 		System.out.println("floatVar: " + floatVar);
 		
 		int intVar = 5;
@@ -20,6 +20,7 @@ public class DataTypes {
 		byte byteVar = 5;
 		System.out.println("byteVar: " + byteVar);
 		
+		// byte byte2 = byteVar*byteVar;
 		// Outputting the square of the above values
 		System.out.println("doubVar squared is " + doubVar*doubVar);
 		System.out.println("floatVar squared is " + floatVar*floatVar);

@@ -32,6 +32,24 @@ public class Complex {
 		return Math.sqrt(imag()*imag() + real()*real());
 	}
 	
+	// Calculating and returning the angle for "this" Complex class
+	public double angle() {
+		double ratio = getIm()/getRe();
+		if (getRe() != 0 && getIm() != 0) {
+			return Math.atan(ratio);
+		}
+		else if (getIm() > 0 && getIm() == 0) {
+			return Math.PI/2;
+		}
+		else if (getIm() < 0 && getIm() == 0) {
+			return -Math.PI/2;
+		}
+		else {
+			return 0.0;
+		}
+		}
+
+	
 	// Calculating and returning the conjugate of "this" Complex class.
 	public Complex conjugate() {
 		double imC = -this.getIm(); 
@@ -106,7 +124,6 @@ public class Complex {
 	
 	
 	public static void main(String[] args) {
-		
 	}
 
 }

@@ -76,6 +76,6 @@ public class AlgorithmControl {
 		System.out.println("When the loop steps are set to 1000 the total number of loops after 10 seconds is 1251849877");
 		System.out.println("When the loop steps are set to 50000 the total number of loops after 10 seconds is 1972150001");
 		System.out.println("The total number of loops completed increases when the loop counts are printed less frequently, \nthis is because this loop is more efficient.");
-	}
+	  }
 
 }
