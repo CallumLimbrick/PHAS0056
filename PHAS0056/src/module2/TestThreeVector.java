@@ -50,7 +50,6 @@ public class TestThreeVector {
 		double ang4 = ThreeVector.angle(v1, v3);
 		System.out.println("The angle between v1 and v3 is "+ang4);
 		
-		
 		System.out.println(v1);
 		System.out.println("If there is no 'toString()' method then executing the command returns the name of the object as there is no method to convert it autimatically to a string.");
 		

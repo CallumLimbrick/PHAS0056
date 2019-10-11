@@ -95,7 +95,4 @@ public class ThreeVector {
 	public double angle(ThreeVector a) {
 		return angle(this, a);
 	}
-	
-	public static void main(String[] args) {
-	}
 }

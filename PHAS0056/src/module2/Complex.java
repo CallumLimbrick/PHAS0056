@@ -49,7 +49,6 @@ public class Complex {
 		}
 		}
 
-	
 	// Calculating and returning the conjugate of "this" Complex class.
 	public Complex conjugate() {
 		double imC = -this.getIm(); 
@@ -121,9 +120,4 @@ public class Complex {
 	static Complex ONE = new Complex(1, 0);
 	static Complex ZERO = new Complex(0, 0);
 	static Complex I =  new Complex(0, 1);
-	
-	
-	public static void main(String[] args) {
-	}
-
 }
