@@ -4,26 +4,68 @@ public class TestExceptions {
 
 	public static void main(String[] args) throws Exception {
 
-//		Complex testcomp1 = new Complex(0, 0);
-//		Complex testcomp2 = new Complex(2, 2);
-//		
-//		System.out.println(testcomp1.normalised());
-//		System.out.println(Complex.divide(testcomp2, testcomp1));
+		try {
+			Complex test = new Complex(0,0);
+			System.out.println(test.normalised());
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		
-//		ThreeVector testvec1 = new ThreeVector(0,0,0);
-//		ThreeVector testvec2 = new ThreeVector(1,1,1);
-//		
-//		System.out.println(testvec1.unitVector());
-//		System.out.println(ThreeVector.angle(testvec1, testvec2));
+		try {
+			Complex test1 = new Complex(0,0);
+			Complex test2 = new Complex(1,1);
+			System.out.println(Complex.divide(test2,  test1));
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		
-//		FallingParticle testpart1 = new FallingParticle(0,1);
-//		FallingParticle testpart2 = new FallingParticle(1,-1);
-//		FallingParticle testpart3 = new FallingParticle(1,1);
-//		
-//		FallingParticle.setH(5);
-//		testpart3.drop(0);
-//		System.out.println(testpart3.getT());
+		try {
+			ThreeVector test = new ThreeVector(0,0,0);
+			System.out.println(test.unitVector());
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 		
+		try {
+			ThreeVector test1 = new ThreeVector(0,0,0);
+			ThreeVector test2 = new ThreeVector(1,1,1);
+			System.out.println(ThreeVector.angle(test1, test2));
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		try {
+			FallingParticle test = new FallingParticle(0,1);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		try {
+			FallingParticle test = new FallingParticle(1,-1);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		try {
+			FallingParticle test = new FallingParticle(1,1);
+			FallingParticle.setH(-1);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		try {
+			FallingParticle test = new FallingParticle(1,1);
+			test.doTimeStep(0);
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
 	}
-
 }

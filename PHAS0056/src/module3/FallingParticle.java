@@ -38,14 +38,14 @@ public class FallingParticle {
 	// Time step function that updates the position an velocity of a falling particle
 	void doTimeStep(double deltaT) throws Exception {
 		if (deltaT <= 0) {
-			throw new Exception("Unphyisical delta T. Delta T must satisfy, deltaT > 0");
+			throw new Exception("Unphysical delta T. Delta T must satisfy, deltaT > 0");
 		}
 		double a = (d*v*v/m) + g;
 		v = v + a*deltaT;
 		z = z + v*deltaT;
 		}
 	
-	//  drop function that loops doTimeStep for a given time interval until partical hits ground
+	//  drop function that loops doTimeStep for a given time interval until particle hits ground
 	void drop(double deltaT) throws Exception {
 		v = 0;
 		t = 0;
