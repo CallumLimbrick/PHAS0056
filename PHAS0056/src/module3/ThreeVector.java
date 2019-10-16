@@ -34,12 +34,12 @@ public class ThreeVector {
 	// unitVector method for "this" ThreeVector, returns type ThreeVector
 	public ThreeVector unitVector() throws Exception {
 		double mag = magnitude();
+		if (mag == 0) {
+			throw new Exception("Unit vector for a zero vector does not exits");
+		}
 		double unitX = this.getX()/mag;
 		double unitY = this.getY()/mag;
 		double unitZ = this.getZ()/mag;
-		if (unitX == 0 && unitY == 0 && unitZ == 0) {
-			throw new Exception("Unit vector for a zero vector does not exits");
-		}
 		ThreeVector unit = new ThreeVector(unitX, unitY, unitZ);
 		return unit;
 	}
