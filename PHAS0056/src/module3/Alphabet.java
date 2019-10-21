@@ -5,7 +5,7 @@ import java.lang.StringBuilder;
 import java.lang.Integer;
 
 public class Alphabet {
-	
+	// Creating random Character 
 	public static char randomCharacter() {
 		Random rand = new Random();
 		int n = rand.nextInt(127);
@@ -13,7 +13,7 @@ public class Alphabet {
 	}	
 	
 	public static void main(String[] args) {
-		
+		// initialising sums
 		int total = 0;
 		int except = 0;
 		
@@ -24,12 +24,12 @@ public class Alphabet {
 			char a = randomCharacter();
 			if (Character.isDigit(a) == true || Character.isLetter(a) == true) {
 				
-				builder.append(a);
+				builder.append(a); //appending string
 								try {
-					total += Integer.parseInt(String.valueOf(a));
+					total += Integer.parseInt(String.valueOf(a)); //adding to digit total
 				}
 				catch (Exception e) {
-					except += 1;
+					except += 1; //counting letters
 				}
 			}
 		}
