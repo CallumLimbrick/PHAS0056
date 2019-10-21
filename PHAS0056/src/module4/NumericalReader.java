@@ -17,7 +17,7 @@ public class NumericalReader {
 	public BufferedReader brFromURL(String urlName) throws IOException {
 		return WordCounter.brFromURL(urlName);
 	}
-	
+
 	private File dataFile;
 	private double minValue;
 	private double maxValue;
@@ -26,7 +26,7 @@ public class NumericalReader {
 
 	void analysisStart(String dataFile) throws Exception {
 		File f = new File(dataFile);
-		this.minValue = 0;
+		this.minValue = 1000000000;
 		this.maxValue = 0;
 		this.nValues = 0;
 		this.sumOfValues = 0;
@@ -38,14 +38,35 @@ public class NumericalReader {
 		else if (s.hasNextDouble()) {
 			FileWriter f = new FileWriter(dataFile);
 			BufferedWriter b = new BufferedWriter(f);
-			
+			PrintWriter pw = new PrintWriter(b);
+			while (s.hasNextDouble()) {
+				double n = s.nextDouble();
+				pw.write(String.valueOf(n));
+				pw.print(n);
+				if (n < minValue) {
+					this.minValue = n;
+				}
+				else if (n > maxValue) {
+					this.maxValue = n;
+				}
+				this.nValues += 1;
+				this.sumOfValues += n;
+			}
 		}
 	}
 
-	public static void main(String[] args) {
+	void analysisEnd() {
+		System.out.println("Minimum value: " + this.minValue);
+		System.out.println("Maximum value: " + this.maxValue);
+		System.out.println("Number of numbers: " + this.nValues);
+		System.out.println("Average of numbers: " + this.sumOfValues/this.nValues);
+	}
+	
+	public static void main(String[] args) throws IOException {
 
 		try {
-			getStringFromKeyboard();
+			
+//			analysisStart("N:" + File.separator + "mywork" + File.separator + getStringFromKeyboard());
 		} catch (Exception e) {}
 	}
 }
