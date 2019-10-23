@@ -61,13 +61,22 @@ public class NumericalReader {
 		System.out.println("Number of numbers: " + this.nValues);
 		System.out.println("Average of numbers: " + this.sumOfValues/this.nValues);
 	}
-	
+
 	public static void main(String[] args) throws IOException {
 
-		try {
-			
-//			analysisStart("N:" + File.separator + "mywork" + File.separator + getStringFromKeyboard());
-		} catch (Exception e) {}
+		saveDir = NumericalReader.getStringFromKeyboard();
+
+		saveFile = (saveDir + File.separator + dataFile);
+		NumericalReader nr = new NumericalReader();
+
+		BufferedReader reader = nr.brFromURL("http://foo/bar/");
+		String line = "";
+
+		nr.analysisStart(saveFile); // initialize minValue etc.
+		while ((line = br.readLine()) != null) {
+			nr.analyseData(line); // analyze lines, check for comments etc.
+		}
+		nr.analysisEnd(); // print min, max, etc.
 	}
 }
 
