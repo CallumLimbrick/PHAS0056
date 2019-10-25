@@ -8,7 +8,7 @@ public class NumericalReader {
 	public static String getStringFromKeyboard() throws Exception {
 		InputStreamReader r = new InputStreamReader(System.in);
 		BufferedReader b = new BufferedReader(r);
-		System.out.println("Please type something!");
+		System.out.println("Please type the directory to be used!");
 		String s = b.readLine();
 		System.out.println("You typed: "+s);
 		return s;
@@ -18,14 +18,16 @@ public class NumericalReader {
 		return WordCounter.brFromURL(urlName);
 	}
 
-	private File dataFile;
+	private static String dataFile = "numbers.txt";
 	private double minValue;
 	private double maxValue;
 	private double nValues;
 	private double sumOfValues;
+	private String f;
 
 	void analysisStart(String dataFile) throws Exception {
 		File f = new File(dataFile);
+		FileWriter fw = new FileWriter(f);
 		this.minValue = 1000000000;
 		this.maxValue = 0;
 		this.nValues = 0;
@@ -34,19 +36,24 @@ public class NumericalReader {
 
 	void analyseData(String line) throws IOException {
 		Scanner s = new Scanner(line);
-		if (line.isEmpty() || line.startsWith("c")) {} // Can I get it to check if it contains ONLY spaces?
+		System.out.println(line);
+		if (line.isEmpty() || line.startsWith("c")) {} 
 		else if (s.hasNextDouble()) {
-			FileWriter f = new FileWriter(dataFile);
-			BufferedWriter b = new BufferedWriter(f);
-			PrintWriter pw = new PrintWriter(b);
+			System.out.println("file");
+			FileWriter file = new FileWriter(this.f);
+			System.out.println("br");
+			BufferedWriter br = new BufferedWriter(file);
+			System.out.println("pw");
+			PrintWriter pw = new PrintWriter(br);
 			while (s.hasNextDouble()) {
+				System.out.println(s.nextDouble());
 				double n = s.nextDouble();
 				pw.write(String.valueOf(n));
 				pw.print(n);
-				if (n < minValue) {
+				if (n < this.minValue) {
 					this.minValue = n;
 				}
-				else if (n > maxValue) {
+				else if (n > this.maxValue) {
 					this.maxValue = n;
 				}
 				this.nValues += 1;
@@ -62,18 +69,17 @@ public class NumericalReader {
 		System.out.println("Average of numbers: " + this.sumOfValues/this.nValues);
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {	
+		
+		String saveDir = NumericalReader.getStringFromKeyboard();
 
-		saveDir = NumericalReader.getStringFromKeyboard();
-
-		saveFile = (saveDir + File.separator + dataFile);
+		String saveFile = (saveDir + File.separator + dataFile);
 		NumericalReader nr = new NumericalReader();
 
-		BufferedReader reader = nr.brFromURL("http://foo/bar/");
+		BufferedReader reader = nr.brFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module4/module4_data1.txt");
 		String line = "";
-
 		nr.analysisStart(saveFile); // initialize minValue etc.
-		while ((line = br.readLine()) != null) {
+		while ((line = reader.readLine()) != null) {
 			nr.analyseData(line); // analyze lines, check for comments etc.
 		}
 		nr.analysisEnd(); // print min, max, etc.
