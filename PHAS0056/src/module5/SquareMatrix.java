@@ -123,7 +123,7 @@ public class SquareMatrix {
 	}
 	
 	public static SquareMatrix multiply(SquareMatrix sm1, SquareMatrix sm2) throws Exception{
-		/*
+		/* PUT STRING HERE
 		 * 
 		 */
 		if(sm1.numberOfRows()!=sm2.numberOfCols() || sm1.numberOfCols()!=sm2.numberOfRows()) {
