@@ -13,7 +13,7 @@ public class TestSquareMatrix {
 
 		//Carrying out and printing calculations
 		int[][] aPlusB = new int[3][3]; 
-		for (int k=0;k==2;k++) {
+		for (int k=0;k<;k++) {
 			for (int j=0;j==2;j++) {
 				aPlusB[k][j] = A[k][j] + B[k][j];
 			}
