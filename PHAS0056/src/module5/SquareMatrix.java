@@ -45,6 +45,10 @@ public class SquareMatrix {
 	}
 	
 	public static SquareMatrix unitMatrix(int size) throws NotSquareMatrixException {
+		/* Creates a unit matrix of given size
+		 * INPUT: int size
+		 * OUTPUT: SquareMatrix with number of columns and rows equal to size and 1.0 on diagonal
+		 */
 		double[][] uMatrix = new double[size][size];
 		for (int i=0;i<size;i++) {
 			for(int j=0;j<size;j++) {
@@ -58,5 +62,36 @@ public class SquareMatrix {
 		}
 		SquareMatrix uFMatrix = new SquareMatrix(uMatrix);
 		return uFMatrix;
+	}
+	
+	public int hashCode() {
+		/*
+		 * To be completely honest, I've no idea what this is
+		 */
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.deepHashCode(sMatrix);
+		return result;
+	}
+
+	public boolean equals(Object obj) {
+		/* Checks if two matrices have the same elements
+		 * INPUT: Object to be compared to
+		 * OUTPUT: Boolean 
+		 */
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SquareMatrix other = (SquareMatrix) obj;
+		if (!Arrays.deepEquals(sMatrix, other.sMatrix))
+			return false;
+		return true;
+	}
+	
+	public static SquareMatrix add(SquareMatrix sm1, SquareMatrix sm2) {
+		
 	}
 }
