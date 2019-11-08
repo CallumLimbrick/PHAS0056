@@ -88,7 +88,7 @@ public class SquareMatrix {
 
 	public static SquareMatrix add(SquareMatrix sm1, SquareMatrix sm2) throws Exception{
 		/* Add two square matrices together by looping through their elements and adding them
-		 * INPUT: Two square matrices
+		 * INPUT: Two matrices of same dimensions
 		 * OUTPUT: New Square matrix of same dimensions
 		 * Throws exception if the matrices are not the correct dimensions
 		 */
@@ -106,8 +106,8 @@ public class SquareMatrix {
 	
 	public static SquareMatrix subtract(SquareMatrix sm1, SquareMatrix sm2) throws Exception{
 		/* Subtract one matrix from another by looping through their elements and subtracting them
-		 * INPUT: Two square matrices
-		 * OUTPUT: New Square matrix of same dimensions
+		 * INPUT: Two matrices of same dimensions
+		 * OUTPUT: New matrix of same dimensions
 		 * Throws exception if the matrices are not the correct dimensions
 		 */
 		if(sm1.numberOfCols()!=sm2.numberOfCols() || sm1.numberOfRows()!=sm2.numberOfRows()) {
@@ -123,17 +123,24 @@ public class SquareMatrix {
 	}
 	
 	public static SquareMatrix multiply(SquareMatrix sm1, SquareMatrix sm2) throws Exception{
-		/* PUT STRING HERE
-		 * 
+		/* Multiply two matrixes together by looping over there elements and then multiplying elements through another for loop
+		 * INPUT: Two matrices with correct dimensions for multiplicaton
+		 * OUTPUT: New matrix with same number of rows as sm1 and same number of cols as sm2
+		 * Throws exception if input matrices are not correct dimensions
 		 */
 		if(sm1.numberOfRows()!=sm2.numberOfCols() || sm1.numberOfCols()!=sm2.numberOfRows()) {
-			throw new Exception("Matrices don't have correct dimesnions to multiply");
+			throw new Exception("Matrices don't have correct dimensions to multiply");
 		}
 		double[][] smMultiply = new double[sm1.numberOfRows()][sm2.numberOfCols()];
+		//Multiplicaton of two matrices
 		for(int i=0;i<sm1.numberOfRows();i++) {
 			for(int j=0;j<sm2.numberOfCols();j++) {
-				smMultiply[i][j] = 
+				smMultiply[i][j] =0;
+				for(int k=0;k<sm1.numberOfCols();k++) {
+					smMultiply[i][j] += sm1.sMatrix[i][k]*sm2.sMatrix[k][j]; 
+				}
 			}
 		}
+		return new SquareMatrix(smMultiply);
 	}
 }

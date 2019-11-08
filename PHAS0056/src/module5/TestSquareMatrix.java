@@ -13,6 +13,12 @@ public class TestSquareMatrix {
 		System.out.println(test2);
 		
 		System.out.println(test1.equals(test1));
+		
+		System.out.println(SquareMatrix.multiply(test2, test2));
+		
+		double[][] b = {{1},{2}};
+		SquareMatrix test3 = new SquareMatrix(b);
+		System.out.println(SquareMatrix.multiply(test2, test3));
 	}
 }
 
