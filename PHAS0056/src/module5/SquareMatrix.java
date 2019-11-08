@@ -143,4 +143,16 @@ public class SquareMatrix {
 		}
 		return new SquareMatrix(smMultiply);
 	}
+	
+	public SquareMatrix add(SquareMatrix sm1) throws Exception {
+		return add(this, sm1);
+	}
+	
+	public SquareMatrix subtract(SquareMatrix sm1) throws Exception {
+		return subtract(this, sm1);
+	}
+	
+	public SquareMatrix multiply(SquareMatrix sm1) throws Exception {
+		return multiply(this, sm1);
+	}
 }
