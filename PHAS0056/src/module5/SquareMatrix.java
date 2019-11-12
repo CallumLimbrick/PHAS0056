@@ -3,6 +3,7 @@ package module5;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+//
 public class SquareMatrix {
 
 	private double[][] sMatrix;
