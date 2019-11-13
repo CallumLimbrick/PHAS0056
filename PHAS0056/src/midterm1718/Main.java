@@ -38,5 +38,8 @@ public class Main {
 		
 		//
 		System.out.println(Analysis.annualDiff(3, 2012, test));
+		
+		//
+		System.out.println(Analysis.fiveBiggestDrop(3, test));
 	}
 }
