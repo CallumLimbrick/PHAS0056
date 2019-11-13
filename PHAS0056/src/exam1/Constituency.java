@@ -4,21 +4,21 @@ public class Constituency {
 	
 	// initialising variables
 	private String ons;
-	private String name;
+	private String conName;
 	private String region;
 	private int voters;
 	
 	// constructor
-	public Constituency(String ons, String name, String region, int voters) {
+	public Constituency(String ons, String conName, String region, int voters) {
 		this.ons = ons;
-		this.name = name;
+		this.conName = conName;
 		this.region = region;
 		this.voters = voters;
 	}
 	
 	// getter functions
 	String getOns() {return ons;}
-	String getName() {return name;}
+	String getconName() {return conName;}
 	String getRegion() {return region;}
 	int getVoters() {return voters;}
 }

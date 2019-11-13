@@ -122,30 +122,30 @@ public class Analysis {
 		return area1 - area2;
 	}
 
-	public static int[] fiveBiggestDrop(int month, ArrayList<Entry> resource) throws Exception {
-		/*
-		 * 
-		 */
-		HashMap<Integer, Double> monthData = new HashMap<Integer, Double>();
-		for(int i=0; i<resource.size(); i++) {
-			Entry data = (Entry) resource.get(i);
-			if(month == data.getMonth() && data.getArea() != -9999) {
-				monthData.put(data.getYear(), data.getArea());
-			}
-		int k = 0;
-		int prevKey;
-		
-		for(int j : monthData.keySet()) {
-			if(k == 0) {
-				k ++;
-				prevKey = j;
-			}
-			else {
-				
-			}
-		}
-		}
-		return years;
-	}
+//	public static int[] fiveBiggestDrop(int month, ArrayList<Entry> resource) throws Exception {
+//		/*
+//		 * 
+//		 */
+//		HashMap<Integer, Double> monthData = new HashMap<Integer, Double>();
+//		for(int i=0; i<resource.size(); i++) {
+//			Entry data = (Entry) resource.get(i);
+//			if(month == data.getMonth() && data.getArea() != -9999) {
+//				monthData.put(data.getYear(), data.getArea());
+//			}
+//		int k = 0;
+//		int prevKey;
+//		
+//		for(int j : monthData.keySet()) {
+//			if(k == 0) {
+//				k ++;
+//				prevKey = j;
+//			}
+//			else {
+//				
+//			}
+//		}
+//		}
+//		return years;
+//	}
 }
 

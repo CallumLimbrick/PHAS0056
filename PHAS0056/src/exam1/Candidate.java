@@ -6,6 +6,7 @@ public class Candidate {
 	// Initialising variables
 	private String ons;
 	private int pano;
+	private String conName;
 	private String surname;
 	private String forname;
 	private String party;
@@ -13,9 +14,10 @@ public class Candidate {
 	private int votes;
 	
 	// constructor
-	public Candidate(String ons, int pano, String surname, String forname, String party, String partyId, int votes) {
+	public Candidate(String ons, int pano, String conName, String surname, String forname, String party, String partyId, int votes) {
 		this.ons = ons;
 		this.pano = pano;
+		this.conName = conName;
 		this.surname = surname;
 		this.forname = forname;
 		this.party = party;
@@ -26,6 +28,7 @@ public class Candidate {
 	// getter functions
 	String getOns() {return ons;}
 	int getPano() {return pano;}
+	String getConName() {return conName;}
 	String getSurname() {return surname;}
 	String getForname() {return forname;}
 	String getParty() {return party;}
