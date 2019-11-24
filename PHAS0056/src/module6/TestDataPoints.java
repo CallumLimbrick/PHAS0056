@@ -7,9 +7,13 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * Includes method for importing data form URL into ArrayList that contains DataPoint objects
+ * Main method to test importing is working and that the LabelledDataPoint subclass is working correctly
+ */
 public class TestDataPoints {
 	
-	public static ArrayList<LabelledDataPoint> dataFromURL(String url) throws Exception {
+	public static ArrayList<DataPoint> dataFromURL(String url) throws Exception {
 		/* Retrieves data from URL and returns ArrayList of data
 		 * INPUT: url of data
 		 * OUTPUT: ArrayList of LabelledDataPoint objects
@@ -19,7 +23,7 @@ public class TestDataPoints {
 		InputStream is = u.openStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader b = new BufferedReader(isr);
-		ArrayList<LabelledDataPoint> mypoints = new ArrayList<LabelledDataPoint>();
+		ArrayList<DataPoint> mypoints = new ArrayList<DataPoint>();
 		String line = "";
 		
 		while((line = b.readLine()) != null) {
@@ -39,7 +43,7 @@ public class TestDataPoints {
 				}
 			}
 			else {
-				LabelledDataPoint p = new LabelledDataPoint(x, y, ey, null);
+				DataPoint p = new DataPoint(x, y, ey);
 				mypoints.add(p);
 			}
 			s.close();
@@ -47,9 +51,15 @@ public class TestDataPoints {
 		return mypoints;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
-
+		// Importing data from URL
+		ArrayList<DataPoint> test = dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
+		
+		// Loop printing DataPoint objects from ArrayList 
+		for(int i=0; i<test.size();i++) {
+			System.out.println(test.get(i).toString());
+		}
 	}
 
 }
