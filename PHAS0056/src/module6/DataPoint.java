@@ -1,8 +1,11 @@
 package module6;
-
+/*
+ * Class that contains a datapoint that has double values for x, y and the error in y, ey
+ * DataPoint is a superclass
+ */
 public class DataPoint {
 	
-	protected double x; //
+	protected double x; 
 	protected double y;
 	protected double ey;
 	

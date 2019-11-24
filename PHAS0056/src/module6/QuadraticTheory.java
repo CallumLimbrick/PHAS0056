@@ -15,6 +15,7 @@ public class QuadraticTheory implements Theory {
 		this.c = c;
 	}
 	
+	// toString method
 	public String toString() {
 		return a + "x^2 + " + b + "x + " + c;
 	}

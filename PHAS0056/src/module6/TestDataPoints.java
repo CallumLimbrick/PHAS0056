@@ -13,13 +13,13 @@ import java.util.Scanner;
  * Main method to test importing is working and that the LabelledDataPoint subclass is working correctly
  */
 public class TestDataPoints {
-
+	
+	/* Retrieves data from URL and returns ArrayList of data
+	 * INPUT: url of data
+	 * OUTPUT: ArrayList of LabelledDataPoint objects
+	 * Throws exception if there are too many columns of data in any of the lines in the url
+	 */
 	public static Collection<DataPoint> dataFromURL(String url) throws Exception {
-		/* Retrieves data from URL and returns ArrayList of data
-		 * INPUT: url of data
-		 * OUTPUT: ArrayList of LabelledDataPoint objects
-		 * Throws exception if there are too many columns of data in any of the lines in the url
-		 */
 		URL u = new URL(url);
 		InputStream is = u.openStream();
 		InputStreamReader isr = new InputStreamReader(is);
@@ -33,7 +33,8 @@ public class TestDataPoints {
 			double x = s.nextDouble();
 			double y = s.nextDouble();
 			double ey = s.nextDouble();
-
+			
+			// Checking if current line is DataPoint or LabelledDataPoint class
 			if(s.hasNext()) {
 				String label = s.next();
 				LabelledDataPoint p = new LabelledDataPoint(x, y, ey, label);

@@ -23,7 +23,7 @@ public class ChiSquared implements GoodnessOfFitCalculator{
 			double y = point.y;
 			double ey = point.ey;
 			double yTheory = theory.y(x);
-			chiSquared += Math.pow(y-yTheory, 2) / Math.pow(ey, 2);
+			chiSquared += Math.pow(y-yTheory, 2) / Math.pow(ey, 2); // Chi-Squared calculation
 		}
 		return chiSquared;
 	}

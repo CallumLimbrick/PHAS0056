@@ -1,7 +1,7 @@
 package module6;
 
 /*
- * Subclass extending DataPoint to include a String label
+ * Subclass extending DataPoint to include a String label in addition to the 3 double values
  */
 public class LabelledDataPoint extends DataPoint {
 	
