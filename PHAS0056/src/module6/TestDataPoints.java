@@ -13,7 +13,7 @@ import java.util.Scanner;
  * Main method to test importing is working and that the LabelledDataPoint subclass is working correctly
  */
 public class TestDataPoints {
-	
+
 	/* Retrieves data from URL and returns ArrayList of data
 	 * INPUT: url of data
 	 * OUTPUT: ArrayList of LabelledDataPoint objects
@@ -33,7 +33,7 @@ public class TestDataPoints {
 			double x = s.nextDouble();
 			double y = s.nextDouble();
 			double ey = s.nextDouble();
-			
+
 			// Checking if current line is DataPoint or LabelledDataPoint class
 			if(s.hasNext()) {
 				String label = s.next();
@@ -69,4 +69,3 @@ public class TestDataPoints {
 		}
 	}
 }
-

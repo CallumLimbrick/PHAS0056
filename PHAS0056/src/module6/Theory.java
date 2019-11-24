@@ -5,6 +5,6 @@ package module6;
  * Defines single method that there is a variable y that is a function of x
  */
 public interface Theory {
-	
+
 	double y(double x); 
 }

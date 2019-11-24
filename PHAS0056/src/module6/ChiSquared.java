@@ -7,7 +7,7 @@ import java.util.Collection;
  * of DataPoint objects.
  */
 public class ChiSquared implements GoodnessOfFitCalculator{
-	
+
 	/*
 	 * (non-Javadoc)
 	 * @see module6.GoodnessOfFitCalculator#goodnessOfFit(java.util.Collection, module6.Theory)
