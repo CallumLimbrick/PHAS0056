@@ -7,6 +7,7 @@ import java.util.Collection;
  */
 public class DataAnalysis {
 	
+	@SuppressWarnings("unused")
 	private static Theory bestTheory(Collection<DataPoint> data,
             Collection<Theory> theories, GoodnessOfFitCalculator gofCalculator) {
         boolean first = true;

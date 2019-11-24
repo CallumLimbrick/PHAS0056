@@ -12,7 +12,7 @@ import java.util.Scanner;
  * Main method to test importing is working and that the LabelledDataPoint subclass is working correctly
  */
 public class TestDataPoints {
-	
+
 	public static ArrayList<DataPoint> dataFromURL(String url) throws Exception {
 		/* Retrieves data from URL and returns ArrayList of data
 		 * INPUT: url of data
@@ -25,14 +25,14 @@ public class TestDataPoints {
 		BufferedReader b = new BufferedReader(isr);
 		ArrayList<DataPoint> mypoints = new ArrayList<DataPoint>();
 		String line = "";
-		
+
 		while((line = b.readLine()) != null) {
 			Scanner s = new Scanner(line);
-			
+
 			double x = s.nextDouble();
 			double y = s.nextDouble();
 			double ey = s.nextDouble();
-			
+
 			if(s.hasNext()) {
 				String label = s.next();
 				LabelledDataPoint p = new LabelledDataPoint(x, y, ey, label);
@@ -52,14 +52,19 @@ public class TestDataPoints {
 	}
 
 	public static void main(String[] args) throws Exception {
-		
-		// Importing data from URL
-		ArrayList<DataPoint> test = dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
-		
-		// Loop printing DataPoint objects from ArrayList 
-		for(DataPoint point : test) {
-			System.out.println(point.toString());
+
+		try {
+			// Importing data from URL
+			ArrayList<DataPoint> test = dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
+
+			// Loop printing DataPoint objects from ArrayList 
+			for(DataPoint point : test) {
+				System.out.println(point.toString());
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e);
 		}
 	}
-
 }
+
