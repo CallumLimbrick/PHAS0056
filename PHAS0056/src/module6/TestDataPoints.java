@@ -57,8 +57,8 @@ public class TestDataPoints {
 		ArrayList<DataPoint> test = dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
 		
 		// Loop printing DataPoint objects from ArrayList 
-		for(int i=0; i<test.size();i++) {
-			System.out.println(test.get(i).toString());
+		for(DataPoint point : test) {
+			System.out.println(point.toString());
 		}
 	}
 
