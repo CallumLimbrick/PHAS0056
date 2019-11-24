@@ -1,25 +1,28 @@
 package module6;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 /*
- * 
+ * Class that details methods to calculate the ChiSquared value of for a given Theory theory with a Collection
+ * of DataPoint objects.
  */
-public class ChiSquared {
+public class ChiSquared implements GoodnessOfFitCalculator{
 	
-	
-	public static double goodnessOfFit(Theory n, ArrayList<DataPoint> data) {
-		/* Runs calculation of CHI^2 by summing over all data and comparing to theoretical values
-		 * INPUT: Theory object to set n value, ArrayList of DataPoint Objects
-		 * OUTPUT: double CHI^2 value for dataset
-		 */
+	/*
+	 * (non-Javadoc)
+	 * @see module6.GoodnessOfFitCalculator#goodnessOfFit(java.util.Collection, module6.Theory)
+	 * 
+	 * INPUTS: Collection of DataPoint objects, method that uses Theory interface
+	 * OUTPUTS: double chi squared value
+	 */
+	@Override
+	public double goodnessOfFit(Collection<DataPoint> data, Theory theory) {
 		double chiSquared = 0;
-		for(int i=0; i<data.size();i++) {
-			DataPoint point = (DataPoint) data.get(i);
+		for(DataPoint point : data) {
 			double x = point.x;
 			double y = point.y;
 			double ey = point.ey;
-			double yTheory = n.y(x);
+			double yTheory = theory.y(x);
 			chiSquared += Math.pow(y-yTheory, 2) / Math.pow(ey, 2);
 		}
 		return chiSquared;

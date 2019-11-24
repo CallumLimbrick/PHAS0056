@@ -26,13 +26,14 @@ public class DataAnalysis {
         }
         return bestTheory;
     }
-
-	
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt")
+		
+		//Theory th = bestTheory()
+		
 
 	}
-
 }

@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 /*
@@ -13,7 +14,7 @@ import java.util.Scanner;
  */
 public class TestDataPoints {
 
-	public static ArrayList<DataPoint> dataFromURL(String url) throws Exception {
+	public static Collection<DataPoint> dataFromURL(String url) throws Exception {
 		/* Retrieves data from URL and returns ArrayList of data
 		 * INPUT: url of data
 		 * OUTPUT: ArrayList of LabelledDataPoint objects
@@ -23,7 +24,7 @@ public class TestDataPoints {
 		InputStream is = u.openStream();
 		InputStreamReader isr = new InputStreamReader(is);
 		BufferedReader b = new BufferedReader(isr);
-		ArrayList<DataPoint> mypoints = new ArrayList<DataPoint>();
+		Collection<DataPoint> mypoints = new ArrayList<DataPoint>();
 		String line = "";
 
 		while((line = b.readLine()) != null) {
@@ -55,7 +56,7 @@ public class TestDataPoints {
 
 		try {
 			// Importing data from URL
-			ArrayList<DataPoint> test = dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
+			Collection<DataPoint> test = dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
 
 			// Loop printing DataPoint objects from ArrayList 
 			for(DataPoint point : test) {
