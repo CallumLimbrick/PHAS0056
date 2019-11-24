@@ -7,7 +7,7 @@ public class PowerLawTheory implements Theory {
 	
 	private double n;
 	
-	// Contructor 
+	// Constructor 
 	public PowerLawTheory (double n) {
 		this.n = n;
 	}
