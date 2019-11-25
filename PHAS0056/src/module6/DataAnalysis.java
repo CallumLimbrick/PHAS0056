@@ -20,6 +20,7 @@ public class DataAnalysis {
 		Theory bestTheory = null;
 		for (Theory theory : theories) {
 			double gof = gofCalculator.goodnessOfFit(data, theory);
+			System.out.println("The Chi-Squared value for " + theory.toString() + " is: " + gof + ".");
 			if (first) {
 				bestTheory = theory;
 				bestGoodnessOfFit = gof;
@@ -36,22 +37,21 @@ public class DataAnalysis {
 
 		try {
 			// Initialising and populating array list of Theory objects with script specified parameters
-			Collection<Theory> theories = new ArrayList<Theory>();
-			Theory theory1 = new PowerLawTheory(2);
-			Theory theory2 = new PowerLawTheory(2.05);
-			Theory theory3 = new QuadraticTheory(1,10,0);
-			theories.add(theory1);
-			theories.add(theory2);
-			theories.add(theory3);
+			ArrayList<Theory> theories = new ArrayList<Theory>();
+			theories.add(new PowerLawTheory(2));
+			theories.add(new PowerLawTheory(2.05));
+			theories.add(new QuadraticTheory(1,10,0));
 
 			// Initialising dataset Collection from given url
 			Collection<DataPoint> dataset = TestDataPoints.dataFromURL("http://www.hep.ucl.ac.uk/undergrad/3459/data/module6/module6-data.txt");
-
+			
 			GoodnessOfFitCalculator chi2 = new ChiSquared();
 			Theory th = bestTheory(dataset, theories, chi2);
-
-			System.out.println("The function that best matches the datafile is " + th.toString());
-		} catch (Exception e) {
+			
+			// Printing results
+			System.out.println("The function that best matches the datafile is therefore " + th.toString());
+		} 
+		catch (Exception e) {
 			System.out.println(e);
 		}
 	}

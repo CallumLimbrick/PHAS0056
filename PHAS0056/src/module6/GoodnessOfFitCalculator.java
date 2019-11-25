@@ -7,7 +7,5 @@ import java.util.Collection;
  * Defines single method that the value for the "goodness of a fit" is dependent on the data and the theory that is used
  */
 public interface GoodnessOfFitCalculator {
-
 	double goodnessOfFit(Collection<DataPoint> data, Theory theory);
-
 }
