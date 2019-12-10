@@ -21,7 +21,7 @@ public class CountdownTask implements Runnable {
 	@Override
 	public void run() {
 		int i = number;
-		while (i>=0) { // run until reaching zero
+		while (i>0) { // run until reaching zero
 			if (Thread.currentThread().isInterrupted()) return;
 			System.out.print(i+ "\n");
 			i -= 1;
