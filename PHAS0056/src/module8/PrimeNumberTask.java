@@ -15,8 +15,7 @@ public class PrimeNumberTask implements Runnable {
 	 */
 	@Override
 	public void run() {
-		
+
 		
 	}
-
 }
