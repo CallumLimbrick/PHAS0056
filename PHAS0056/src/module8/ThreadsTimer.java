@@ -57,5 +57,11 @@ public class ThreadsTimer {
 		catch (Exception e) {
 			System.out.println(e);
 		}
+		/*
+		 * As can be seen from the results, the value for PI estimated by the four threads is closer to the "accepted" value of PI (3.14159265359 according to google). This is as expected as the monte carlo method
+		 * estimates the value using random numbers and so using the mean of the four threads you would expect the value to converge towards the actual value of PI, the more threads one uses. 
+		 * Also the four thread method was between 3 and 4 times as quick as the single thread method due to the task being split into four parts that are run in parallel.
+		 */
 	}
 }
+
