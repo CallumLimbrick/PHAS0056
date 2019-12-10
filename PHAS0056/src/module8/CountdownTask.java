@@ -13,11 +13,6 @@ public class CountdownTask implements Runnable {
 	public CountdownTask(int number) {
 		this.number = number;
 	}
-	
-	/*
-	 * Getter function for number of seconds on countdown.
-	 */
-	public int getNumber() {return number;}
 
 	/*
 	 * (non-Javadoc)
@@ -26,7 +21,7 @@ public class CountdownTask implements Runnable {
 	@Override
 	public void run() {
 		int i = number;
-		while (i>=0) { // run until interrupted
+		while (i>=0) { // run until reaching zero
 			if (Thread.currentThread().isInterrupted()) return;
 			System.out.print(i+ "\n");
 			i -= 1;
