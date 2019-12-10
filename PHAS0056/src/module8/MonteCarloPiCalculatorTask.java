@@ -3,6 +3,9 @@ package module8;
 import java.util.Random;
 import java.util.concurrent.Callable;
 
+/*
+ * Monte Carlo method for estimating a value of PI
+ */
 public class MonteCarloPiCalculatorTask implements Callable<Double> {
 	private final long n_points;
 	public MonteCarloPiCalculatorTask(long nPoints) {
