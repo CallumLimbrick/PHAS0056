@@ -7,10 +7,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+/*
+ * Class has main method that calculates the time it takes to estimate a value for PI using
+ * the MonteCarloPiCalculator class using both one thread, and multiple
+ */
 public class ThreadsTimer {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		
+		/*
+		 * Try block calculating the value of pi using just a single thread
+		 */
 		try {
 			long initialTime = System.currentTimeMillis();
 			long nPoints = 10000000L;
@@ -23,6 +30,9 @@ public class ThreadsTimer {
 			System.out.println(e);
 		}
 		
+		/*
+		 * Try block calculating the value of pi using four threads
+		 */
 		try {
 			long initialTime = System.currentTimeMillis();
 			long nPoints = 10000000L;
