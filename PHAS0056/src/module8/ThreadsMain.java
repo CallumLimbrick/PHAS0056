@@ -1,9 +1,8 @@
 package module8;
 
-
-
 /*
- * 
+ * Class with main method to run both threads, CountdownTask and PrimeNumberTask, in parallel. 
+ * The PrimeNumberTask will run until it is interrupted which will happen when the CoundownTask has returned.
  */
 public class ThreadsMain {
 

@@ -3,7 +3,7 @@ package module8;
 import java.util.ArrayList;
 
 /*
- * 
+ * Class used to calculate as many prime numbers as possible and place those numbers in a list while it's thread is running.
  */
 public class PrimeNumberTask implements Runnable {
 
@@ -12,6 +12,7 @@ public class PrimeNumberTask implements Runnable {
 	/*
 	 * (non-Javadoc)
 	 * @see java.lang.Runnable#run()
+	 * Method calculates whether or not concurrent integers are prime and if they are they are added to a list
 	 */
 	@Override
 	public void run() {
