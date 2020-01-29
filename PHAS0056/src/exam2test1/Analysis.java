@@ -83,15 +83,19 @@ public class Analysis {
 	/*
 	 * 
 	 */
-	public int vol10Check(ArrayList<Ident> volunteers) {
-		HashMap<Integer, Integer> images = new HashMap<Integer, Integer>();
-		for (int n : volCheck(volunteers)) {
-			images.put(n, 0);
-		}
-		for (Ident dataPoint : volunteers) {
-			int m = images.get(dataPoint.getId());
-			images.replace(dataPoint.getId(), m+1);
-		}
-		
-	}
+//	public int vol10Check(ArrayList<Ident> volunteers) {
+//		HashMap<Integer, Integer> images = new HashMap<Integer, Integer>();
+//		for (int n : volCheck(volunteers)) {
+//			images.put(n, 0);
+//		}
+//		for (Ident dataPoint : volunteers) {
+//			int m = images.get(dataPoint.getId());
+//			images.replace(dataPoint.getId(), m+1);
+//		}
+//		for (int i : images.keySet()) {
+//			if (images.get(i) >= 10) {
+//				
+//			}
+//		}
+//	}
 }
