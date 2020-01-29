@@ -1,6 +1,7 @@
 package exam2test1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TenObserved {
 	
@@ -29,4 +30,9 @@ public class TenObserved {
 	void setLoc(double[] val) {val = loc;}
 	void setExp(String val) {val = exp;}
 	void setVol(ArrayList<String> val) {val = vol;}
+	
+	// toString function
+	public String toString() {
+		return "Id: " + id + ", location: " + Arrays.toString(loc) + ", expert classification: " + exp + ", volunteer classification(s): " + vol + ".";
+	}
 }
